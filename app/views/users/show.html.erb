@@ -1,25 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="twelve columns">
+		<p id="notice"><%= notice %></p>
+		
+		<div class="right">
+			<%= link_to 'Edit', edit_user_path(@user), class: 'small radius button' %>
+			<%= link_to 'Back', users_path, class: 'small radius button' %>
+		</div>
+		
+		<h2>
+			<%= @user.screen_name %>			
+		</h2>
+	
+		<p>
+		  <b>Email:</b>
+		  <%= @user.email %>
+		</p>
+		
+		<p>
+		  <b>Avatar url:</b>
+		  <%= @user.avatar_url %>
+		</p>
+		
+		<p>
+		  <b>Bio:</b>
+		  <%= @user.bio %>
+		</p>		
+	</div>
+</div>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>Screen name:</b>
-  <%= @user.screen_name %>
-</p>
-
-<p>
-  <b>Avatar url:</b>
-  <%= @user.avatar_url %>
-</p>
-
-<p>
-  <b>Bio:</b>
-  <%= @user.bio %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
