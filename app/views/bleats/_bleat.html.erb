@@ -1,5 +1,8 @@
 <div class="bleat panel radius">
-    <div class="collapsed row">
+    <div class="collapse row">
+        <%= link_to bleat, method: :delete, class: 'right', data: { confirm: 'Are you sure?' } do %>
+            <i class="general foundicon-trash"></i>
+        <% end %>
         <div class="three columns">
             <%= image_tag bleat.user.avatar_url, class: 'avatar' %>
         </div>

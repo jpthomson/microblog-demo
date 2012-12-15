@@ -2,6 +2,8 @@ SimpleBlog::Application.routes.draw do
   resources :users do
     resources :bleats
   end
+  
+  resources :bleats
 
 
   get "home/index"
