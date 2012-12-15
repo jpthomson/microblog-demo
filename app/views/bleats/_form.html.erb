@@ -1,0 +1,9 @@
+<%= form_for([@user, @user.bleats.build]) do |f| %>
+  <div class="field">
+    <%= f.label 'new bleat' %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'post', class: 'small radius button' %>
+  </div>
+<% end %>

@@ -1,26 +1,9 @@
 <div class="row">
-	<div class="twelve columns">
-		
-		<h1>Recent Bleats</h1>
-			
-	</div>
-</div>
-
-<div class="row">
 	<div class="six columns">
 		
-		<% @bleats.each do |bleat| %>
-			<div class="row bleat panel radius">
-				<div class="three columns">
-					<%= image_tag bleat.user.avatar_url, class: 'avatar' %>
-				</div>
-				<div class="nine columns">
-					<%= link_to bleat.user.screen_name, bleat.user %>
-					<p><%= bleat.content %></p>
-				</div>
-			</div>
-			</div>	
-		<% end %>
+        <h3>Recent Bleats</h3>
+
+		<%= render @bleats %>
 
 	</div>
 	<div class="six columns">
