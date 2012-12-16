@@ -3,6 +3,11 @@ SimpleBlog::Application.routes.draw do
     resources :bleats
   end
   
+  match '/users/auth/:provider/callback' => 'authorizations#create' 
+  resources :authorizations, :only => [:index, :create]
+  
+  devise_for :users
+  
   resources :bleats
 
 
