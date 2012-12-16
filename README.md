@@ -7,9 +7,6 @@ Prototyping a full Rails application (authentication, authorization, APIs, etc.)
 Features include:
 
 * Multi-provider authentication using Devise and OmniAuth.
-
-Todo:
-
 * Authorization using CanCan and Rolify.
 * A RESTful API.
 
