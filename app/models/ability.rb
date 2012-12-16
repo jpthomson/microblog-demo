@@ -10,7 +10,7 @@ class Ability
       can :show, User
       
       # can only edit own profile
-      can [:update], User, :id => user.id
+      can :update, User, :id => user.id
     end
   end
 end
