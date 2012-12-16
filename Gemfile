@@ -17,6 +17,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 
+gem "cancan"
+gem "rolify"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

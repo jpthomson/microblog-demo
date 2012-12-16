@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
   attr_accessible :avatar_url, :bio, :email, :screen_name
   
   has_many :bleats
