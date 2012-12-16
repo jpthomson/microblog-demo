@@ -1,12 +1,16 @@
 SimpleBlog::Application.routes.draw do
-  resources :users do
-    resources :bleats
-  end
-  
   match '/users/auth/:provider/callback' => 'authorizations#create' 
   resources :authorizations, :only => [:index, :create]
   
   devise_for :users
+  
+  devise_scope :user do
+    delete "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
+  
+  resources :users do
+    resources :bleats
+  end
   
   resources :bleats
 

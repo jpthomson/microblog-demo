@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   has_many :bleats
   
   devise :omniauthable
+  
+  has_many :authorizations
 end
