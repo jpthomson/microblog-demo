@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SimpleBlog</title>
+  <title>Bleater</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,7 +11,7 @@
     <!-- Basic Needs -->
     <nav class="top-bar">
         <ul>
-            <li class="name"><h1><a href="/">Simple Blog</a></h1></li>
+            <li class="name"><h1><a href="/">Bleater</a></h1></li>
         </ul>
 	  
         <section>
@@ -24,9 +24,19 @@
                         <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
                     </li>
                 <% else %>
-                    <li>
-                        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-                    </li>	          
+                    <li class="has-dropdown">
+                        <a href="#">Sign in with</a>
+                
+                        <ul class="dropdown">
+                            <li>
+                                <%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %>
+                            </li>
+                            <li>
+                                <%= link_to "Github", user_omniauth_authorize_path(:github) %>
+                            </li>
+                        </ul>
+                
+                    </li>        
                 <% end %>
 	      </ul>
 	  </section>
