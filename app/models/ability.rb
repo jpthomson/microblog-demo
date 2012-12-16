@@ -11,6 +11,7 @@ class Ability
       
       # can only edit own profile
       can :update, User, :id => user.id
+      can [:create, :update, :destroy], Bleat, :user_id => user.id
     end
   end
 end
