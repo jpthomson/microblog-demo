@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   
   devise :omniauthable
   
-  has_many :authorizations
+  has_many :authorizations, :dependent => :destroy
 end

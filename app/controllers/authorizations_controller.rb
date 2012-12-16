@@ -8,7 +8,7 @@ class AuthorizationsController < ApplicationController
       user = @authorization.user
     else
       # TODO: unsuitable for production, but makes it easier to match up facebook auths with seed data
-      user = User.where(:email => auth_hash["info"]["email"]).first
+      user = User.find_by_email(auth_hash["info"]["email"])
       
       user = create_user_from_hash(auth_hash) unless user
       user.authorizations.build :provider => auth_hash["provider"], :uid => auth_hash["uid"]
@@ -22,11 +22,6 @@ class AuthorizationsController < ApplicationController
   def failure
     render :text => "Sorry, but you didn't allow access to our app!"
   end
-  
-  # def destroy
-    # session[:user_id] = nil
-    # redirect_to "/"
-  # end
   
   private
   def create_user_from_hash(auth_hash)
