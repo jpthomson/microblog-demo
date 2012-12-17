@@ -7,6 +7,7 @@ class AuthorizationsController < ApplicationController
     if authorization
       user = authorization.user
     else
+      user = User.where(:email => auth_hash["info"]["email"]).first
       user = create_user(auth_hash) unless user
       authorize_user(user, auth_hash)
       user.save
