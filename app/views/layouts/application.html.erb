@@ -28,15 +28,11 @@
                         <a href="#">Sign in with</a>
                 
                         <ul class="dropdown">
-                            <li>
-                                <%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %>
-                            </li>
-                            <li>
-                                <%= link_to "Github", user_omniauth_authorize_path(:github) %>
-                            </li>
-                            <li>
-                                <%= link_to "Developer", user_omniauth_authorize_path(:developer) %>
-                            </li>
+                            <% for provider in AuthProvider.active_providers %>
+                                <li>
+                                    <%= link_to provider.name, user_omniauth_authorize_path(provider.provider) %>
+                                </li>
+                            <% end %>
                         </ul>
                 
                     </li>        

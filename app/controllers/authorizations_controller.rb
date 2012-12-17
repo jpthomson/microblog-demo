@@ -2,16 +2,13 @@ class AuthorizationsController < ApplicationController
   def create
     auth_hash = request.env['omniauth.auth']
     
-    @authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
+    authorization = Authorization.active(auth_hash[:provider], auth_hash[:uid])
     
-    if @authorization
-      user = @authorization.user
+    if authorization
+      user = authorization.user
     else
-      # TODO: unsuitable for production, but makes it easier to match up facebook auths with seed data
-      user = User.find_by_email(auth_hash["info"]["email"])
-      
-      user = create_user_from_hash(auth_hash) unless user
-      user.authorizations.build :provider => auth_hash["provider"], :uid => auth_hash["uid"]
+      user = create_user(auth_hash) unless user
+      authorize_user(user, auth_hash)
       user.save
     end
     
@@ -24,7 +21,13 @@ class AuthorizationsController < ApplicationController
   end
   
   private
-  def create_user_from_hash(auth_hash)
-    User.new :screen_name => auth_hash["info"]["name"], :email => auth_hash["info"]["email"]
+  def authorize_user(user, auth_hash)
+    authorization = user.authorizations.build :uid => auth_hash["uid"]
+    authorization.auth_provider = AuthProvider.active_provider(auth_hash["provider"])    
   end
+
+  def create_user(auth_hash)
+    User.new :screen_name => auth_hash["info"]["name"],
+      :email => auth_hash["info"]["email"]
+  end  
 end
