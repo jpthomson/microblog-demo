@@ -28,6 +28,7 @@
     <%= f.text_area :bio %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', :class => 'small radius button' %>
+    <%= link_to 'Cancel', @user, :class => 'small secondary radius button' %>
   </div>
 <% end %>
