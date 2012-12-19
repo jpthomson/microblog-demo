@@ -1,0 +1,8 @@
+omniauth:
+  facebook:
+    key: '451564074911057'
+    secret: '79472d218d15752be627e5f0d0e8cb85'
+  github:
+    key: 'cf81ea06f7bd85e75923'
+    secret: 'a147ff6d7765e3cc7635a7a8716d6582bee60e05'
+   

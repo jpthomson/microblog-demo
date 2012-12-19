@@ -15,10 +15,6 @@ ActiveRecord::Schema.define(:version => 20121219135253) do
 
   create_table "auth_providers", :force => true do |t|
     t.string   "provider"
-    t.string   "name"
-    t.string   "key"
-    t.string   "secret"
-    t.string   "env"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

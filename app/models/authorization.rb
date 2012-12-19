@@ -7,7 +7,7 @@ class Authorization < ActiveRecord::Base
   def self.active(provider, uid)
     Authorization.
       joins(:auth_provider).
-      where('env = ? and provider = ? and uid = ?', Rails.env, provider, uid).
+      where('provider = ? and uid = ?', provider, uid).
       first
   end
 end

@@ -206,19 +206,17 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  #config.omniauth :facebook, "451564074911057", "79472d218d15752be627e5f0d0e8cb85"
-  #config.omniauth :github, "cf81ea06f7bd85e75923", "a147ff6d7765e3cc7635a7a8716d6582bee60e05"
-  #config.omniauth :developer
   
-  #AuthProvider.active_providers.each do |provider|
-  #  if provider.key || provider.secret
-  #    config.omniauth provider.provider, provider.key, provider.secret
-  #  else
-  #    # the Developer strategy doesn't require any extra parameters
-  #    config.omniauth provider.provider
-  #  end
-  #end
+  config.omniauth :developer unless Rails.env.production?
   
+  config.omniauth :facebook,
+    ENV['FACEBOOK_API_KEY'] || Settings.omniauth.facebook.key,
+    ENV['FACEBOOK_API_SECRET'] || Settings.omniauth.facebook.secret
+  
+  config.omniauth :github,
+    ENV['GITHUB_API_KEY'] || Settings.omniauth.github.key,
+    ENV['GITHUB_API_SECRET'] || Settings.omniauth.github.secret
+    
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
