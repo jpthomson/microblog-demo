@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
   before_save :default_values
 
   def default_values
-    self.avatar_url ||= 'default_avatar.png'
+    self.avatar_url ||= 'default_user.png'
   end
 end

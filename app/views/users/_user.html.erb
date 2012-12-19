@@ -1,10 +1,15 @@
 <div class="user panel radius">
-    <div class="collapse row">
-        <div class="three columns">
-            <%= image_tag user.avatar_url, class: 'avatar' %>
-        </div>
-        <div class="nine columns">
-            <p><%= user.screen_name %></p>
+    <div class="row collapse">
+        <%= image_tag user.avatar_url, class: 'avatar' %>
+        <div class='content'>
+            <h6><%= link_to user.screen_name, user %></h6>
+            <div class='actions'>
+                <% if can? :update, user %>
+                    <%= link_to edit_user_path(user) do %>
+                        <i class="general foundicon-edit"></i>
+                    <% end %>
+                <% end %>
+            </div>
             <p><%= user.bio %></p>
         </div>
     </div>

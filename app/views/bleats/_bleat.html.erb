@@ -1,13 +1,15 @@
 <div class="bleat panel radius">
     <div class="collapse row">
-        <%= link_to bleat, method: :delete, class: 'right', data: { confirm: 'Are you sure?' } do %>
-            <i class="general foundicon-trash"></i>
-        <% end %>
-        <div class="three columns">
-            <%= image_tag bleat.user.avatar_url, class: 'avatar' %>
+        <div class='actions'>
+            <% if can? :destroy, bleat %>
+                <%= link_to bleat, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="general foundicon-trash"></i>
+                <% end %>
+            <% end %>
         </div>
-        <div class="nine columns">
-            <%= link_to bleat.user.screen_name, bleat.user %>
+        <%= image_tag bleat.user.avatar_url, class: 'avatar' %>
+        <div class='content'>
+            <h6><%= link_to bleat.user.screen_name, bleat.user %></h6>
             <p><%= bleat.content %></p>
         </div>
     </div>

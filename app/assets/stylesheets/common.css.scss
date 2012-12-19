@@ -2,3 +2,54 @@ textarea {
   height: 120px;
 }
 
+.panel {
+  position: relative;
+}
+
+.panel > h6 {
+  margin: 0;
+}
+
+.user.panel {
+  min-height: 120px;  
+  padding: 10px;
+}
+
+.bleat.panel {
+  min-height: 70px;
+  padding: 5px;
+}
+
+.user .avatar, .bleat .avatar {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.user .avatar {
+  max-width: 100px;  
+  max-height: 100px;  
+}
+
+.bleat .avatar {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.panel .actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.user .content, .bleat .content {
+  float: left;
+}
+
+.user .content {
+  margin-left: 110px;  
+}
+
+.bleat .content {
+  margin-left: 70px;  
+}
