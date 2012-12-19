@@ -9,6 +9,25 @@
 
 	</div>
 	<div class="six columns">
+	    <% unless signed_in? %>
+    	    <div class="radius callout panel">
+    	        <h5>Welcome to Bleater!</h5>
+    	        <p><a href="#">Sign in</a> or <a href="#">sign up</a> to get started.</p>
+    	    </div>
+	    <% end %>
+	    
+	    <div class="radius panel">
+	        <h5 class="title">
+	            Trending
+	        </h5>
+	        <ul class="trending">
+                <% @trending_tags.each do |tag| %>
+                   <li>
+                       <a href="#"><%= tag %></a>
+                   </li>
+                <% end %>
+            </ul>
+	    </div>
 	</div>
 </div>
 	

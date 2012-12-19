@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216133148) do
+ActiveRecord::Schema.define(:version => 20121219110903) do
 
   create_table "auth_providers", :force => true do |t|
     t.string   "provider"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(:version => 20121216133148) do
   end
 
   add_index "bleats", ["user_id"], :name => "index_bleats_on_user_id"
+
+  create_table "hash_tags", :force => true do |t|
+    t.integer  "bleat_id"
+    t.string   "tag"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "hash_tags", ["bleat_id"], :name => "index_hash_tags_on_bleat_id"
+  add_index "hash_tags", ["tag"], :name => "index_hash_tags_on_tag"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
