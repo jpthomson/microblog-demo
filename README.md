@@ -1,4 +1,4 @@
-## Simple Blog
+## MicroBlog Demo
 
 Prototyping a full Rails application (authentication, authorization, APIs, etc.)
 
@@ -12,4 +12,4 @@ Features include:
 
 ### Documentation
 
-For details of the implementation, see [the wiki](https://github.com/jbrunton/simple-blog/wiki).
+For details of the implementation, see [the wiki](https://github.com/jbrunton/microblog-demo/wiki).

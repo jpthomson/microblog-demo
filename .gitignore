@@ -15,6 +15,7 @@
 /tmp
 
 *.DS_Store
+*.project
 
 config/settings.local.yml
 config/settings/*.local.yml

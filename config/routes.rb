@@ -1,4 +1,4 @@
-SimpleBlog::Application.routes.draw do
+MicroBlog::Application.routes.draw do
   match '/users/auth/:provider/callback' => 'authorizations#create' 
   resources :authorizations, :only => [:index, :create]
   

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-SimpleBlog::Application.load_tasks
+MicroBlog::Application.load_tasks
