@@ -2,7 +2,7 @@
 	<div class="six columns">
 		
         <div class="radius panel">
-            <h5 class="title">Recent Bleats</h5>
+            <h4 class="title">Recent Bleats</h4>
         </div>
 
 		<%= render @bleats %>
@@ -11,8 +11,9 @@
 	<div class="six columns">
 	    <% unless signed_in? %>
     	    <div class="radius callout panel">
-    	        <h5>Welcome to Bleater!</h5>
-    	        <p><a href="#">Sign in</a> or <a href="#">sign up</a> to get started.</p>
+    	        <h4 class="subheader">Welcome to Bleater!</h4>
+    	        <p><%= link_to 'Sign in', :new_user_session, :class => 'small round button' %> or
+    	           <%= link_to 'Sign up', '', :class => 'small round button' %> to get started.</p>
     	    </div>
 	    <% end %>
 	    

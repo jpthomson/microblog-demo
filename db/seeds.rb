@@ -30,8 +30,9 @@ Role.create([
 example_user = User.create email: 'example@user.com',
   screen_name: 'Example User',
   avatar_url: 'default_user.png',
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie faucibus suscipit.'
-  
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie faucibus suscipit.',
+  password: 'Password1'
+
 example_user.bleats.create content: 'Lorem ipsum #dolor sit amet, consectetur adipiscing elit.'
 example_user.bleats.create content: 'In sit amet lectus #dolor, nec ultricies neque.'
 example_user.bleats.create content: 'Quisque condimentum orci id leo adipiscing ullamcorper.'
@@ -40,6 +41,7 @@ example_user.bleats.create content: 'Mauris #suscipit, erat ac ultricies volutpa
 
 john_brunton = User.create email: 'john_brunton@hotmail.co.uk',
   screen_name: 'John Brunton',
-  avatar_url: 'https://en.gravatar.com/userimage/30550187/0064f04f15fe2377b08f71cce4afb0ce.png?size=200'
+  avatar_url: 'https://en.gravatar.com/userimage/30550187/0064f04f15fe2377b08f71cce4afb0ce.png?size=200',
+  password: Devise.friendly_token[0,20]
   
 john_brunton.add_role :admin
