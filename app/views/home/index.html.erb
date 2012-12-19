@@ -10,11 +10,7 @@
 	</div>
 	<div class="six columns">
 	    <% unless signed_in? %>
-    	    <div class="radius callout panel">
-    	        <h4 class="subheader">Welcome to Bleater!</h4>
-    	        <p><%= link_to 'Sign in', :new_user_session, :class => 'small round button' %> or
-    	           <%= link_to 'Sign up', '', :class => 'small round button' %> to get started.</p>
-    	    </div>
+    	    <%= render 'home/welcome' %>
 	    <% end %>
 	    
 	    <div class="radius panel">
