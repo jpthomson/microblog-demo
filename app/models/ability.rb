@@ -8,6 +8,7 @@ class Ability
     else
       # can view any profile page
       can :show, User
+      can :read, Bleat
       
       # can only edit own profile
       can :update, User, :id => user.id

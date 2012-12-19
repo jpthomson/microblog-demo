@@ -8,4 +8,10 @@ class User < ActiveRecord::Base
   has_many :authorizations, :dependent => :destroy
   
   validates :email, :uniqueness => true
+  
+  before_save :default_values
+
+  def default_values
+    self.avatar_url ||= 'default_avatar.png'
+  end
 end

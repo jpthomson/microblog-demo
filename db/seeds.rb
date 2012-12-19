@@ -27,8 +27,15 @@ Role.create([
   { :name => 'user' },
 ], :without_protection => true)
 
-example_user = User.create email: 'example@user.com', screen_name: 'Example User', avatar_url: 'default_user.png'
-example_user.bleats.create content: 'An example bleat'
+example_user = User.create email: 'example@user.com',
+  screen_name: 'Example User',
+  avatar_url: 'default_user.png',
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie faucibus suscipit.'
+  
+example_user.bleats.create content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 
-john_brunton = User.create email: 'john_brunton@hotmail.co.uk', screen_name: 'John Brunton'
+john_brunton = User.create email: 'john_brunton@hotmail.co.uk',
+  screen_name: 'John Brunton',
+  avatar_url: 'https://en.gravatar.com/userimage/30550187/0064f04f15fe2377b08f71cce4afb0ce.png?size=200'
+  
 john_brunton.add_role :admin

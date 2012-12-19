@@ -14,24 +14,9 @@
             <%= link_to 'Edit', edit_user_path(@user), class: 'right small radius button' %>
         <% end %>
         
-        <h3>
-            <%= @user.screen_name %>            
-        </h3>
-
-        <p>
-          <b>Email:</b>
-          <%= @user.email %>
-        </p>
+        <h3><%= @user.screen_name %>'s profile</h3>
         
-        <p>
-          <b>Avatar url:</b>
-          <%= @user.avatar_url %>
-        </p>
-
-        <p>
-          <b>Bio:</b>
-          <%= @user.bio %>
-        </p>        
+        <%= render @user %>       
     </div>
 </div>
 
