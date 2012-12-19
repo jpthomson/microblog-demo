@@ -23,8 +23,8 @@ class AuthorizationsController < ApplicationController
   
   private
   def authorize_user(user, auth_hash)
-    authorization = user.authorizations.build :uid => auth_hash["uid"]
-    authorization.auth_provider = AuthProvider.active_provider(auth_hash["provider"])    
+    authorization = user.authorizations.build :uid => auth_hash["uid"],
+      :provider => auth_hash["provider"]
   end
 
   def create_user(auth_hash)

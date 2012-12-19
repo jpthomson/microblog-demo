@@ -13,22 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20121219135253) do
 
-  create_table "auth_providers", :force => true do |t|
+  create_table "authorizations", :force => true do |t|
+    t.integer  "user_id"
     t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "authorizations", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "auth_provider_id"
-    t.string   "uid"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  add_index "authorizations", ["auth_provider_id"], :name => "index_authorizations_on_auth_provider_id"
-  add_index "authorizations", ["user_id"], :name => "index_authorizations_on_user_id"
+  add_index "authorizations", ["user_id", "provider"], :name => "index_authorizations_on_user_id_and_provider", :unique => true
 
   create_table "bleats", :force => true do |t|
     t.text     "content"

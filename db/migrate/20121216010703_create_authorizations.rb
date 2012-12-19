@@ -2,12 +2,11 @@ class CreateAuthorizations < ActiveRecord::Migration
   def change
     create_table :authorizations do |t|
       t.references :user
-      t.references :auth_provider
+      t.string :provider
       t.string :uid
 
       t.timestamps
     end
-    add_index :authorizations, :user_id
-    add_index :authorizations, :auth_provider_id
+    add_index :authorizations, [:user_id, :provider], :unique => true
   end
 end
