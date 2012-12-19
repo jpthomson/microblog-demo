@@ -17,5 +17,11 @@ class BleatsController < ApplicationController
 
     redirect_to user_path(@user)
   end
+  
+  def trending
+    # TODO: group and sort
+    @tag = params[:tag]
+    @bleats = Bleat.joins(:hash_tags).where('tag = ?', @tag)
+  end
 end
 

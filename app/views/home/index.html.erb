@@ -23,7 +23,7 @@
 	        <ul class="trending">
                 <% @trending_tags.each do |tag| %>
                    <li>
-                       <a href="#"><%= tag %></a>
+                       <%= link_to tag, controller: 'bleats', action: 'trending', tag: tag %>
                    </li>
                 <% end %>
             </ul>

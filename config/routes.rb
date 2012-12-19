@@ -13,6 +13,8 @@ SimpleBlog::Application.routes.draw do
   end
   
   resources :bleats
+  
+  match '/trending/:tag' => 'bleats#trending'
 
 
   get "home/index"
