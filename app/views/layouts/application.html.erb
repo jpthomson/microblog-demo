@@ -21,6 +21,11 @@
                     <li>
                         <%= link_to "Welcome, #{current_user.screen_name}!", current_user %>
                     </li>
+                    <% if current_user.admin? %>
+                        <li>
+                            <%= link_to "Admin", "/admin" %>
+                        </li>
+                    <% end %>
                     <li>
                         <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
                     </li>
