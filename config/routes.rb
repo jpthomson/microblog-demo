@@ -1,4 +1,6 @@
 MicroBlog::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
   match '/users/auth/:provider/callback' => 'authorizations#create' 
   resources :authorizations, :only => [:index, :create]
   
