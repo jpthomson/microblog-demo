@@ -8,6 +8,7 @@ Current features include:
 
 * Multi-provider authentication using Devise and OmniAuth.
 * Authorization using CanCan and Rolify.
+* An admin interface using ActiveAdmin.
 * A RESTful API.
 
 For a complete overview of the plans and current status of the project, see the [roadmap](https://github.com/jbrunton/microblog-demo/wiki/Roadmap) on the wiki.
