@@ -7,6 +7,9 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role? :admin
       can :manage, :all
+    elsif user.has_role? :moderator
+      can :manage, Bleat
+      can :read, User
     else
       # can view any profile page
       can :show, User

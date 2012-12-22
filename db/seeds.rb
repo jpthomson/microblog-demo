@@ -8,7 +8,8 @@
 
 Role.create([
   { :name => 'admin' }, 
-  { :name => 'user' },
+  { :name => 'moderator' }, 
+  { :name => 'user' }
 ], :without_protection => true)
 
 example_user = User.create email: 'example@user.com',
@@ -16,12 +17,26 @@ example_user = User.create email: 'example@user.com',
   avatar_url: 'default_user.png',
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie faucibus suscipit.',
   password: 'Password1'
-
+  
 example_user.bleats.create content: 'Lorem ipsum #dolor sit amet, consectetur adipiscing elit.'
 example_user.bleats.create content: 'In sit amet lectus #dolor, nec ultricies neque.'
 example_user.bleats.create content: 'Quisque condimentum orci id leo adipiscing ullamcorper.'
 example_user.bleats.create content: 'Mauris sollicitudin velit convallis tellus #bibendum id sollicitudin nunc euismod.'
 example_user.bleats.create content: 'Mauris #suscipit, erat ac ultricies volutpat, diam.'
+
+example_admin = User.create email: 'example@admin.com',
+  screen_name: 'Example Admin',
+  avatar_url: 'default_user.png',
+  password: 'Password1'
+
+example_admin.add_role :admin
+
+example_moderator = User.create email: 'example@moderator.com',
+  screen_name: 'Example Moderator',
+  avatar_url: 'default_user.png',
+  password: 'Password1'
+
+example_moderator.add_role :moderator
 
 john_brunton = User.create email: 'john_brunton@hotmail.co.uk',
   screen_name: 'John Brunton',

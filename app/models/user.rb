@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
   def default_values
     self.avatar_url ||= 'default_user.png'
   end
+  
+  def admin?
+    self.has_role? :admin or self.has_role? :moderator
+  end
 end

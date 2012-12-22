@@ -58,7 +58,8 @@ ActiveAdmin.setup do |config|
   config.authentication_method = :authenticate_admin!
   
   def authenticate_admin!
-    unless current_user.has_role? :admin
+    user = current_user || User.new
+    unless user.admin?
       raise CanCan::AccessDenied
     end
   end
