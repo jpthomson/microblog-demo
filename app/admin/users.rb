@@ -1,6 +1,8 @@
 ActiveAdmin.register User do
   controller.authorize_resource
   
+  scope :active
+  
   filter :email
   filter :screen_name
   filter :created_at

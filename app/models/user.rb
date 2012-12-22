@@ -25,4 +25,6 @@ class User < ActiveRecord::Base
   def admin?
     self.has_role? :admin or self.has_role? :moderator
   end
+  
+  scope :active, where('last_sign_in_at > ?', Date.today - 30)
 end
