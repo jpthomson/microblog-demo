@@ -20,7 +20,7 @@ gem 'omniauth-github'
 gem "cancan"
 gem "rolify"
 
-gem "activeadmin"
+gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
 
 # Gems used only for assets and not required
 # in production environments by default.
