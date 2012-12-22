@@ -13,7 +13,7 @@ ActiveAdmin.register User do
     column :created_at
     column :last_sign_in_at
     
-    default_actions
+    authorized_actions
   end
   
   show do |ad|

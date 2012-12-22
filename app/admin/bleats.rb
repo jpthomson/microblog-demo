@@ -13,7 +13,7 @@ ActiveAdmin.register Bleat do
     column :content
     column :created_at
     
-    default_actions
+    authorized_actions
   end
   
   show do |ad|
