@@ -27,7 +27,14 @@ ActiveAdmin.register Bleat do
   
   form do |f|
     f.inputs "Details" do
-      f.input :content
+      if f.object.new_record?
+        f.input :user, :as => :select,
+          :collection => User.all.map { |u| [u.email, u.id] },
+          :include_blank => true
+        f.input :content
+      else
+        f.input :content
+      end
     end
     f.buttons
   end
