@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 1.9.3
+before-script:
+  - rake db:migrate
 script:
   - rake spec
   - rake cucumber
