@@ -1,9 +1,9 @@
 language: ruby
 rvm:
   - 1.9.3
-before-script:
-  - rake db:migrate
 script:
-  - rake spec
-  - rake cucumber
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake spec
+  - bundle exec rake cucumber
   
