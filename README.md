@@ -1,5 +1,7 @@
 ## MicroBlog Demo
 
+[![Build Status](https://secure.travis-ci.org/jbrunton/microblog-demo.png)](http://travis-ci.org/jbrunton/microblog-demo)
+
 Prototyping a commercial, scaleable Rails application and all that entails (authentication, authorization, admin, APIs, etc.)
 
 ### What does it do?
