@@ -24,6 +24,9 @@ gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
 
 group :test, :development do
   gem "rspec-rails"
+  gem "cucumber-rails", :require => false
+  gem "webrat"
+  gem "database_cleaner"
 end
 
 # Gems used only for assets and not required
