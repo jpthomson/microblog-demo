@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_many :bleats  
   has_many :authorizations, :dependent => :destroy
   
-  validates :email, :uniqueness => true
+  validates :email, :presence => true, :uniqueness => true
   
   before_save :default_values
 
