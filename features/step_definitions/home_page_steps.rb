@@ -1,6 +1,5 @@
 Given /^a new bleat with the content \#winning$/ do
-  @user = User.create({:email => 'example@foo.com', :screen_name => 'example', :password => 'asdasd'}, without_protection: true)
-  @bleat = Bleat.create({:content => "#winning", :user => @user}, without_protection: true)
+  create(:bleat, :content => "#winning")
 end
 
 When /^I visit the home page$/ do
