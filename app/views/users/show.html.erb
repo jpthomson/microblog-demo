@@ -2,7 +2,7 @@
     <div class="six columns">        
         <div class="radius panel">
             <div class='actions'>            
-                <% if can? :update, @user %>
+                <% if @user.id == current_user.try(:id) %>
                     <a href="#" data-reveal-id="compose">
                         <i class="general foundicon-plus"></i>
                     </a>
@@ -19,9 +19,4 @@
     <div class="six columns">
         <%= render @user %>       
     </div>
-</div>
-
-<div id="compose" class="reveal-modal medium">
-    <a class="close-reveal-modal">&#215;</a>
-    <%= render "bleats/form" %>
 </div>

@@ -21,14 +21,17 @@
                     <li>
                         <%= link_to "Welcome, #{current_user.screen_name}!", current_user %>
                     </li>
+                    <li>
+                        <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+                    </li>
                     <% if current_user.admin? %>
                         <li>
                             <%= link_to "Admin", "/admin" %>
                         </li>
                     <% end %>
                     <li>
-                        <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-                    </li>
+                        <a href="#" data-reveal-id="compose">Compose</a>
+                    </li>       
                 <% else %>
                     <li>
                         <%= link_to 'Sign in', :new_user_session %>
@@ -44,7 +47,7 @@
                             <% end %>
                         </ul>
                 
-                    </li>        
+                    </li> 
                 <% end %>
 	      </ul>
 	  </section>
@@ -75,7 +78,14 @@
         </div>
     </div>
 
-<%= yield %>
+    <%= yield %>
+
+    <% if user_signed_in? %>
+        <div id="compose" class="reveal-modal medium">
+            <a class="close-reveal-modal">&#215;</a>
+            <%= render "bleats/form" %>
+        </div>
+    <% end %>
 
 </body>
 </html>
