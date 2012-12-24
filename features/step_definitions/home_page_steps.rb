@@ -2,6 +2,12 @@ Given /^a(?: new)? bleat with the content "(.*)"$/ do |content|
   create(:bleat, :content => content)
 end
 
+Given /^(\d+) bleats exist$/ do |count|
+  for k in 1..count.to_i do
+    create(:bleat)
+  end
+end
+
 When /^I visit the home page$/ do
   visit root_url
 end

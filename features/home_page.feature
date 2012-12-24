@@ -5,7 +5,8 @@ Feature: Home page
     I should see the most recent bleats
     
     Scenario: Recent bleats
-        Given a new bleat with the content "howdy!"
+        Given 5 bleats exist
+        And a new bleat with the content "howdy!"
         When I visit the home page
         Then the first bleat on the home page should contain "howdy!"
         
