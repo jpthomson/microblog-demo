@@ -5,7 +5,12 @@ Feature: Home page
     I should see the most recent bleats
     
     Scenario: Recent tweets
-        Given a new bleat with the content #winning
+        Given a new bleat with the content "howdy!"
         When I visit the home page
-        Then the first bleat on the home page should contain #winning
+        Then the first bleat on the home page should contain "howdy!"
+        
+    Scenario: Trending hashtags
+        Given a new bleat with the content "#winning"
+        When I visit the home page
+        Then "#winning" should be a trending hashtag
         
