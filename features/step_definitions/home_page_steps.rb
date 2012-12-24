@@ -1,4 +1,4 @@
-Given /^a new bleat with the content "(.*)"$/ do |content|
+Given /^a(?: new)? bleat with the content "(.*)"$/ do |content|
   create(:bleat, :content => content)
 end
 
