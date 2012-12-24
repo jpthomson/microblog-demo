@@ -4,7 +4,7 @@ describe User do
   context "validations" do
     it "is invalid without an email" do
       user = build(:user, email: "")
-      expect(user).not_to be_valid
+      expect(user).to be_invalid
     end
   end
 end
