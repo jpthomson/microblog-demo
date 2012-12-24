@@ -8,11 +8,7 @@ Given /^(\d+) bleats exist$/ do |count|
   end
 end
 
-When /^I visit the home page$/ do
-  visit root_url
-end
-
-Then /^the first bleat on the home page should contain "(.*)"$/ do |content|
+Then /^the first bleat should contain "(.*)"$/ do |content|
   page.all(".bleat").first.should have_content(content)
 end
 
