@@ -1,4 +1,4 @@
-Feature: Home page
+Feature: News feed
 
     As a user
     When I visit the home page
@@ -14,13 +14,3 @@ Feature: Home page
         Given a bleat with the content "#winning"
         When I visit the home page
         Then "#winning" should be a trending hashtag
-
-    Scenario: Welcome panel shown for unauthenticated users
-        Given I am not authenticated
-        When I visit the home page
-        Then the "welcome" panel should be visible
-        
-    Scenario: Welcome panel hidden for authenticated users
-        Given I am authenticated
-        When I visit the home page
-        Then the "welcome" panel should not be visible
