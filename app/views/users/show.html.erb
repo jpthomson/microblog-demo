@@ -1,13 +1,6 @@
 <div class="row">
     <div class="six columns">        
         <div class="radius panel">
-            <div class='actions'>            
-                <% if @user.id == current_user.try(:id) %>
-                    <a href="#" data-reveal-id="compose">
-                        <i class="general foundicon-plus"></i>
-                    </a>
-                <% end %>
-            </div>
             <h4 class="title">
                 <%= @user.screen_name %>'s bleats
             </h4>

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
     :avatar_url, :bio, :email, :screen_name
   
-  has_many :bleats  
+  has_many :bleats, :order => "created_at DESC"
   has_many :authorizations, :dependent => :destroy
   
   validates :screen_name, :uniqueness => true, :presence => true

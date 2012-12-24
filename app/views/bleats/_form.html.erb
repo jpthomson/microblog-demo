@@ -1,4 +1,17 @@
-<%= form_for([current_user, current_user.bleats.build]) do |f| %>
+<%= form_for(@bleat) do |f| %>
+
+  <% if @bleat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bleat.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @bleat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
   <div class="field">
     <%= f.label 'new bleat' %><br />
     <%= f.text_area :content %>

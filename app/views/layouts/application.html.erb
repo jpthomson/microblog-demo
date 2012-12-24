@@ -30,7 +30,7 @@
                         </li>
                     <% end %>
                     <li>
-                        <a href="#" data-reveal-id="compose">Compose</a>
+                        <%= link_to 'Compose', new_bleat_path %>
                     </li>       
                 <% else %>
                     <li>
@@ -79,13 +79,6 @@
     </div>
 
     <%= yield %>
-
-    <% if user_signed_in? %>
-        <div id="compose" class="reveal-modal medium">
-            <a class="close-reveal-modal">&#215;</a>
-            <%= render "bleats/form" %>
-        </div>
-    <% end %>
 
 </body>
 </html>

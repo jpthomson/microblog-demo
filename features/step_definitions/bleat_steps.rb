@@ -1,10 +1,16 @@
-Given /^a(?: new)? bleat with the content "(.*)"$/ do |content|
+Given /^a bleat with the content "(.*)"$/ do |content|
   create(:bleat, :content => content)
 end
 
 Given /^(\d+) bleats exist$/ do |count|
   for k in 1..count.to_i do
     create(:bleat)
+  end
+end
+
+Given /^I have (\d+) bleats$/ do |count|
+  for k in 1..count.to_i do
+    create(:bleat, :user => @current_user)
   end
 end
 

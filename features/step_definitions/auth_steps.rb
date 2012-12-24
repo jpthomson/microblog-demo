@@ -1,11 +1,11 @@
 Given /^I am authenticated$/ do
-  user = create(:user)
+  @current_user = create(:user)
   visit '/sign_in'
   within("form") do
-    fill_in 'Email', :with => user.email
-    fill_in 'Password', :with => user.password
-    click_button "Sign in"
+    fill_in 'Email', :with => @current_user.email
+    fill_in 'Password', :with => @current_user.password
   end
+  click_button "Sign in"
 end
 
 Given /^I am not authenticated$/ do

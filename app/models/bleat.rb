@@ -4,6 +4,8 @@ class Bleat < ActiveRecord::Base
   
   has_many :hash_tags
   
+  validates :content, :presence => true
+  
   before_save :build_index
   
   def build_index

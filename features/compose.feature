@@ -6,6 +6,7 @@ Feature: Compose
     
     Scenario:
         Given I am authenticated
+        And I have 5 bleats
         When I compose a bleat with content "hey there!"
-        And I visit the home page
+        And I visit my profile
         Then the first bleat should contain "hey there!"

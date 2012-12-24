@@ -10,6 +10,7 @@ FactoryGirl.define do
   factory :user do
     email
     screen_name
-    password 'asdasd'
+    password 'Password1'
+    avatar_url 'default_user.png'
   end
 end
