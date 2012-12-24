@@ -7,3 +7,7 @@ Given /^I am authenticated$/ do
     click_button "Sign in"
   end
 end
+
+Given /^I am not authenticated$/ do
+  # nothing required
+end
