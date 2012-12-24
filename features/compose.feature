@@ -7,4 +7,5 @@ Feature: Compose
     Scenario:
         Given I am authenticated
         When I compose a bleat with content "hey there!"
-        Then the first bleat on my profile page should contain "hey there!"
+        And I visit the home page
+        Then the first bleat should contain "hey there!"
