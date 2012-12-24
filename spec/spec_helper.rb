@@ -38,4 +38,6 @@ RSpec.configure do |config|
   
   # Enable FactoryGirl syntax methods
   config.include FactoryGirl::Syntax::Methods
+  
+  config.include Devise::TestHelpers
 end
