@@ -16,8 +16,13 @@ test: &test
   database: db/test.sqlite3
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-
+  adapter: postgresql
+  encoding: unicode
+  database: microblog_demo_production
+  pool: 5
+  host: localhost
+  username: microblog_demo
+  password: 
+  
 cucumber:
   <<: *test
