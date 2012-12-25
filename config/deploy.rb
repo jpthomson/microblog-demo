@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-server "178.79.170.46/", :web, :app, :db, primary: true
+server "178.79.170.46", :web, :app, :db, primary: true
 
 set :application, "microblog-demo"
 set :user, "deployer"
