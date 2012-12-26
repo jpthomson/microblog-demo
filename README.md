@@ -8,6 +8,8 @@ Prototyping a commercial, scaleable Rails application and all that entails (auth
 
 Current features include:
 
+* BDD using Cucumber and RSpec
+* Deployment to Heroku with git and a VPS with Capybara
 * Multi-provider authentication using Devise and OmniAuth.
 * Authorization using CanCan and Rolify.
 * An admin interface using ActiveAdmin.
@@ -30,7 +32,7 @@ Then, to run it:
 
 It should now be running at [localhost:3000](http://localhost:3000).
 
-You can also try the application at [microblog-demo.herokuapp.com/](http://microblog-demo.herokuapp.com/).
+You can also try the application at [www.microblog-demo.com](http://www.microblog-demo.com).
 
 For more documentation on trying out the features (including users which are present in the seeds.rb file/on the demo instance), see the [demo page](https://github.com/jbrunton/microblog-demo/wiki/Demo) on the wiki.
 
