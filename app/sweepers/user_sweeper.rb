@@ -11,6 +11,6 @@ class UserSweeper < ActionController::Caching::Sweeper
  
   private
   def expire_cache_for(user)
-    expire_action(:controller => 'users', :action => 'show', :id => user.id)
+    # expire_fragment(:controller => 'users', :action => 'show', :id => user.id)
   end
 end
