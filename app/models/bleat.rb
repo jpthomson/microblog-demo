@@ -12,7 +12,7 @@ class Bleat < ActiveRecord::Base
     self.hash_tags.clear
     
     self.content.scan(/#[A-Za-z0-9]+/) do |tag|
-      self.hash_tags.build :tag => tag
+      self.hash_tags.build :tag => tag.downcase
     end
   end
   

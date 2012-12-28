@@ -37,13 +37,13 @@ class BleatsController < ApplicationController
   
   def trending
     # TODO: group and sort
-    @tag = params[:tag]
+    @tag = params[:tag].downcase
     @bleats = Bleat.joins(:hash_tags).where('tag = ?', @tag)
   end
   
   def search
-    @query = params[:q]
-    @bleats = Bleat.where("content LIKE ?", "%#{@query}%")
+    @query = params[:q].downcase
+    @bleats = Bleat.where("lower(content) LIKE ?", "%#{@query}%")
   end
 end
 
