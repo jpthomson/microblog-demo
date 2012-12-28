@@ -6,6 +6,16 @@
   
     <section>
         <ul class="right">
+            <li class="search has-button">
+                <form method="get" action="/search">
+                    <input id="search-box" name="q" type="text">
+                    </input>
+                    <button id="search-submit">
+                        <i class="general foundicon-search">
+                        </i>
+                    </button>
+                </form>
+            </li>
             <% if user_signed_in? %>
                 <li>
                     <%= link_to "Welcome, #{current_user.screen_name}!", current_user %>
