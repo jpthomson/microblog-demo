@@ -5,7 +5,7 @@
     </ul>
   
     <section>
-        <ul class="right">
+        <ul class="left">
             <li class="search has-button">
                 <form method="get" action="/search">
                     <input id="search-box" name="q" type="text">
@@ -16,6 +16,8 @@
                     </button>
                 </form>
             </li>
+        </ul>
+        <ul class="right">
             <% if user_signed_in? %>
                 <li>
                     <%= link_to "Welcome, #{current_user.screen_name}!", current_user %>
