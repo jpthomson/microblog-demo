@@ -2,7 +2,8 @@
   position: relative;
   padding: 0;
   margin: 0;
-  top: -2px;
+  vertical-align: top;
+  top: 9px;
 }
 
 .top-bar ul > li.search form input[type="text"] {
@@ -22,4 +23,11 @@
   box-shadow: none;
   background: none;
   color: #999;
+  padding: 1px 6px;
+  margin: 0;
+}
+
+.top-bar ul > li.search form button i {
+  width: 0;
+  height: 0;
 }
