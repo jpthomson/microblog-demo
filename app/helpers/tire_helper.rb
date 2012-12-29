@@ -5,7 +5,7 @@ module TireHelper
   end
 
   def use_tire?
-    Settings.search.use_tire?
+    Settings.search.use_tire
   end
 
 end
