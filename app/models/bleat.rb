@@ -21,7 +21,7 @@ class Bleat < ActiveRecord::Base
   end
 
   extend TireHelper
-  if tire_available?
+  if use_tire?
     include Tire::Model::Search
     include Tire::Model::Callbacks
   end

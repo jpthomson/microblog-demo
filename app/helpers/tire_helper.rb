@@ -4,9 +4,8 @@ module TireHelper
     tire.__send__(:search, *args, &block)
   end
 
-  def tire_available?
-    false
-    # !Gem::Specification::find_all_by_name('tire').empty?
+  def use_tire?
+    Settings.search.use_tire?
   end
 
 end
