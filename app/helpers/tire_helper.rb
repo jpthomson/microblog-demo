@@ -5,7 +5,8 @@ module TireHelper
   end
 
   def tire_available?
-    !Gem::Specification::find_all_by_name('tire').empty?
+    false
+    # !Gem::Specification::find_all_by_name('tire').empty?
   end
 
 end
