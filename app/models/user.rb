@@ -18,6 +18,44 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true
   
   before_save :default_values
+  
+  def self.from_omniauth(auth_hash)
+    authorization = Authorization.from_omniauth(auth_hash)
+    if authorization.persisted?
+      authorization.user
+    else
+      user = self.send("from_#{auth_hash.provider}", auth_hash)
+      user.authorizations.push(authorization)
+      user
+    end
+  end
+  
+  def self.from_facebook(auth_hash)
+    new :screen_name => auth_hash.info.nickname, :email => auth_hash.info.email
+  end
+  
+  def self.from_github(auth_hash)
+    new :screen_name => auth_hash.info.name, :email => auth_hash.info.email
+  end
+  
+  def self.from_developer(auth_hash)
+    new :screen_name => auth_hash.info.name, :email => auth_hash.info.email
+  end
+  
+  def self.new_with_session(params, session)
+    if session["devise.auth_hash"]
+      user = from_omniauth(session["devise.auth_hash"])
+      user.attributes = params
+      user.valid?
+      user
+    else
+      super
+    end
+  end
+  
+  def password_required?
+    super && !authorizations.any?
+  end
 
   def default_values
     self.avatar_url ||= 'default_user.png'
